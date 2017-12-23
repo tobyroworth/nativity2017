@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Nativity 2017 Controller</title>
+    
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      button {
+        width: 200px;
+        height: 160px;
+        
+        margin: 20px;
+        border: 2px yellow solid;
+        border-radius: 5px;
+        color: yellow;
+        background-color: grey;
+      }
+      
+      #message {
+        width: 400px;
+        height: 160px;
+        margin: 56px;
+        color: yellow;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="open">Open slides window</button>
+    <button id="start">Start</button>
+    <button id="next">Next</button>
+    <div id="message"></div>
+    <script>
+      let slides;
+      
+      document.querySelector('#open').addEventListener('click', () => {
+        slides = window.open('slideDeck.html');
+      });
+      
+      document.querySelector('#start').addEventListener('click', () => {
+        slides.postMessage('start', window.origin);
+      });
+      
+      document.querySelector('#next').addEventListener('click', () => {
+        slides.postMessage('next', window.origin);
+      });
+      
+      const message = document.querySelector('#message');
+      
+      const messages = [];
+      
+      window.addEventListener('message', (e) => {
+      
+      if (e.origin !== window.origin) {
+        return;
+      }
+      
+      switch (e.data.type) {
+        case 'info':
+          let m = e.data.message;
+          console.info(`Info from slideDeck: ${m}`);
+          message.innerHTML += `<br/>${m}`;
+          message.scrollTop = message.scrollHeight;
+          messages.push(m);
+          break;
+      }
+      
+    });
+    </script>
+  </body>
+</html>
