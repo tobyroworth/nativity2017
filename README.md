@@ -8,6 +8,10 @@ All visuals are based on CSS keyframe animations, with a small amount of JavaScr
 
 This was mostly written over a couple of days, with the credits written in the small hours on the morning of the nativity. This isn't an example of great, or production-ready, code, but got the job done.
 
+The visuals, as uploaded to the repository, can be viewed at https://tobyroworth.github.io/nativity2017/ but, as explained below, the full experience, with sound, will require checking out the repository and obtaining the content files.
+
+An explaination of how it works is provided below.
+
 ## Content
 
 This repository is provided to demonstarte the code only. To actually run the full show, further content is required to be downloaded
