@@ -40,7 +40,7 @@ For legal reasons I can't distribute the audio, fonts or images within this repo
 
 ## Running the Visuals
 
-The visuals will run locally from file URLs, or can be served using a local dev server. I used the polymer dev server on cloud9, but any http server should work.
+The visuals need to be served using a local dev server. I used the polymer dev server on cloud9, but any http server should work.
 
 ### Requirements
 
@@ -49,10 +49,6 @@ A recent version of Chrome is suggested - I used 64.0.3270.0 (Official Build) de
 ### Using the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
-
-### Using a local file
-
-Simply open the file in the browser.
 
 ### Usage
 
